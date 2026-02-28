@@ -1,0 +1,44 @@
+<h1>Palm Tree</h1>
+
+<pre>
+  \<------>
+  >------>/
+  /\__>===
+  |      |
+  |      |
+  |      |
+  \     /
+    \  /
+      |
+      |
+      !
+      !
+      !
+      !
+</pre>
+<br>
+
+<button onclick="climb()">Climb</button>
+
+<script>
+  // Initialize the counter outside the function so it persists
+  let amount = 0;
+
+  function climb() {
+    amount += 1;
+    alert("You have climbed the tree " + amount + " times!");
+    
+    // Optional: Add a little feedback for the Son Of A Burger
+    if (amount >= 9999) {
+      alert("You're at the TOP of CHAOS");
+    }
+  }
+</script>
+
+<style>
+  body {
+    background-color: rgb(26, 26, 26);
+    color: rgb(255, 255, 0);
+    font-family: Times New Roman;
+  }
+</style>

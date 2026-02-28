@@ -18,33 +18,34 @@
 </pre>
 <br>
 
-<button onclick="climb()">Climb</button>
+<button onclick="climb()">Climb</button>  <button onclick="reset()">Reset</button>
 
 <script>
-  // Pull the saved amount from the Mac's memory (or start at 0)
+  // 1. IMPORTANT: This line tells the game what the score is when you open the site!
   let amount = parseInt(localStorage.getItem('climbAmount')) || 0;
 
   function climb() {
     amount += 1;
-    
-    // Save the current progress
     localStorage.setItem('climbAmount', amount);
     
-    // Check if we hit the limit
     if (amount >= 9999) {
       alert("You're at the TOP of CHAOS!!!");
-      
-      // THE RESET: Set everything back to 0
-      amount = 0;
+      amount = 0; 
       localStorage.setItem('climbAmount', 0);
-      
       alert("Back to the bottom... start again!");
     } else {
-      // Normal climb alert
-      alert("You have climbed the tree " + amount + " times!");
+      alert("You have climbed the Palm-Tree " + amount + " times!");
     }
   }
+
+  function reset() {
+    // 2. We remove 'let' here so it resets the REAL score, not a fake one
+    amount = 0;
+    localStorage.setItem('climbAmount', 0);
+    alert("You're currently at the bottom of the Palm-Tree");
+  }
 </script>
+
 
 
 <style>

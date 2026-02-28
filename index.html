@@ -21,19 +21,31 @@
 <button onclick="climb()">Climb</button>
 
 <script>
-  // Initialize the counter outside the function so it persists
-  let amount = 0;
+  // Pull the saved amount from the Mac's memory (or start at 0)
+  let amount = parseInt(localStorage.getItem('climbAmount')) || 0;
 
   function climb() {
     amount += 1;
-    alert("You have climbed the tree " + amount + " times!");
     
-    // Optional: Add a little feedback for the Son Of A Burger
+    // Save the current progress
+    localStorage.setItem('climbAmount', amount);
+    
+    // Check if we hit the limit
     if (amount >= 9999) {
-      alert("You're at the TOP of CHAOS");
+      alert("You're at the TOP of CHAOS!!!");
+      
+      // THE RESET: Set everything back to 0
+      amount = 0;
+      localStorage.setItem('climbAmount', 0);
+      
+      alert("Back to the bottom... start again!");
+    } else {
+      // Normal climb alert
+      alert("You have climbed the tree " + amount + " times!");
     }
   }
 </script>
+
 
 <style>
   body {

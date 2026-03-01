@@ -23,6 +23,15 @@
 
 <p>Updates Every Saturday</p>
 
+<form action="mailto:karissaking94@gmail.com?subject=New%20Message%20from%20ALSM%20Palm-Tree/Error" method="post" enctype="text/plain">
+  
+  <input type="text" id="message" name="message" placeholder="Report Any Errors..."><br><br>
+
+  <button type="submit">Send Email</button>
+  <button type="reset">Clear Form</button>
+
+</form>
+
 <script>
   // 1. IMPORTANT: This line tells the game what the score is when you open the site!
   let amount = parseInt(localStorage.getItem('climbAmount')) || 0;
@@ -60,6 +69,6 @@
   button {
     border-radius: 10px;
     border-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    color: #FFD700;
   }
 </style>
